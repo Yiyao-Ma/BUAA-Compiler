@@ -1,0 +1,23 @@
+ADD_LAYER
+arr int a[3]
+a[0] = 1
+a[1] = 2
+a[2] = 3
+int_ main
+ADD_LAYER
+..while1..start :
+#t0 = a[1]
+blt #t0 3 ..while1..body
+goto ..while1..end
+..while1..body :
+ADD_LAYER
+#t1 = a[1]
+#t2 = #t1 + 1
+a[1] = #t2
+POP_LAYER
+#t3 = a[1]
+blt #t3 3 ..while1..body
+..while1..end :
+ret 0
+END_FUNC
+POP_LAYER
